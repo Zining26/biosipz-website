@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biosip Straw (M) Sdn Bhd | Sip Smart Sip Green</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937; background: #f8fafc; }
+
+    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+    .nav-container { max-width: 1200px; margin: auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { font-size: 1rem; font-weight: bold; color: #065f46; }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: #334155; font-weight: 600; font-size: 0.95rem; }
+    .nav-links a:hover { color: #059669; }
+
+    header { color: white; position: relative; }
+    .hero-slider { position: relative; width: 100%; height: 100vh; min-height: 700px; overflow: hidden; }
+    .slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; background-size: cover; background-position: center; }
+    .slide.active { display: flex; }
+    .slide.slide-bio {
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/BIO STRAW.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.slide-paper {
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/PAPER STRAW.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.slide-plastic {
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/PLASTIC STRAW.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.slide-sugarcane {
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/SUGARCANE.png');
+  background-size: cover;
+  background-position: center;
+}
+    .slide-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.18); }
+    .slide-content { position: relative; z-index: 2; max-width: 850px; }
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); color: white; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
+    .slider-btn.prev { left: 20px; }
+    .slider-btn.next { right: 20px; }
+    .slider-dots { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 3; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.45); cursor: pointer; }
+    .dot.active { background: white; }
+    header h1 { font-size: 2.8rem; margin-bottom: 12px; line-height: 1.2; }
+    .tagline { font-size: 1.2rem; font-weight: 600; margin-bottom: 14px; opacity: 0.95; }
+    header p { max-width: 760px; margin: 0 auto; font-size: 1.05rem; opacity: 0.95; }
+    .hero-buttons { margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: bold; transition: 0.3s ease; }
+    .btn-primary { background: white; color: #065f46; }
+    .btn-secondary { background: rgba(255,255,255,0.16); color: white; border: 1px solid rgba(255,255,255,0.3); }
+    .btn:hover { transform: translateY(-2px); opacity: 0.96; }
+
+    .section { max-width: 1200px; margin: auto; padding: 70px 20px; }
+    .section-title { text-align: center; font-size: 2.1rem; margin-bottom: 12px; color: #0f172a; }
+    .section-subtitle { text-align: center; color: #475569; margin-bottom: 42px; max-width: 720px; margin-left: auto; margin-right: auto; }
+
+    .products {
+  padding: 80px 20px;
+  background: #f8faf9;
+}
+
+.products h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #1b4332;
+  margin-bottom: 12px;
+}
+
+.products-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #5f6f65;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.product-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+}
+
+.product-image {
+  width: 100%;
+  height: 240px;
+  background: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #eef2ef;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.product-content {
+  padding: 24px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-content h3 {
+  font-size: 1.5rem;
+  color: #0b2545;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.product-content p {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.product-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+}
+
+.product-specs li {
+  margin-bottom: 10px;
+  color: #065f46;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.product-specs li::before {
+  content: "•";
+  color: #198754;
+  font-weight: bold;
+  display: inline-block;
+  width: 16px;
+}
+
+.product-btn {
+  margin-top: auto;
+  display: inline-block;
+  text-align: center;
+  background: #198754;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.product-btn:hover {
+  background: #146c43;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    padding: 60px 16px;
+  }
+
+  .products h2 {
+    font-size: 1.8rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .product-content {
+    padding: 20px 18px 22px;
+  }
+
+  .product-content h3 {
+    font-size: 1.3rem;
+  }
+}
+    .product-content p { color: #475569; font-size: 0.96rem; }
+
+    .product-specs { margin-top: 12px; font-size: 0.9rem; color: #065f46; }
+    .product-specs li { margin-bottom: 4px; }
+
+    .why-us { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 10px; }
+    .why-box { background: white; border: 1px solid #d1fae5; border-radius: 18px; padding: 24px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .why-box h3 { color: #065f46; margin-bottom: 8px; }
+
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+    .contact-card, .form-card { background: white; border-radius: 20px; padding: 28px; box-shadow: 0 10px 28px rgba(0,0,0,0.06); border: 1px solid #ecfdf5; }
+    .contact-card h3, .form-card h3 { margin-bottom: 16px; color: #065f46; }
+    .contact-card p { margin-bottom: 12px; color: #334155; }
+    .contact-card a { color: #059669; text-decoration: none; font-weight: 700; }
+    form { display: grid; gap: 14px; }
+    input, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #cbd5e1; font-size: 0.95rem; outline: none; }
+    input:focus, textarea:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.12); }
+    textarea { min-height: 120px; resize: vertical; }
+    .submit-btn { background: #059669; color: white; border: none; padding: 12px 20px; border-radius: 999px; font-weight: bold; cursor: pointer; transition: 0.3s ease; }
+    .submit-btn:hover { background: #047857; }
+
+    .whatsapp-float { position: fixed; right: 20px; bottom: 20px; background: #25D366; color: white; text-decoration: none; padding: 14px 18px; border-radius: 999px; font-weight: bold; box-shadow: 0 8px 24px rgba(0,0,0,0.18); z-index: 1001; }
+    footer { text-align: center; padding: 20px; background: #022c22; color: #d1fae5; font-size: 0.92rem; margin-top: 30px; }
+
+    .mobile-contact-bar {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1002;
+      background: white;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.12);
+      padding: 10px 12px;
+      gap: 10px;
+    }
+
+    .mobile-contact-btn {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .mobile-call {
+      background: #065f46;
+      color: white;
+    }
+
+    .mobile-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    @media (max-width: 900px) { .contact-wrapper { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { header h1 { font-size: 2rem; } .section-title { font-size: 1.7rem; } .nav-container { flex-direction: column; align-items: flex-start; } .nav-links { gap: 12px; } .whatsapp-float { display: none; } .mobile-contact-bar { display: flex; } body { padding-bottom: 80px; } .hero-slider { height: 85vh; min-height: 600px; } .slider-btn { width: 40px; height: 40px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="brand">Biosip Straw (M) Sdn Bhd</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="hero-slider">
+      <div class="slide slide-bio active">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Premium Straw Solutions for Modern Businesses</h1>
+          <div class="tagline">Sip Smart Sip Green</div>
+          <p>Biosip Straw (M) Sdn Bhd supplies Biodegradable, Plastic, Sugarcane and Paper Straws for cafes, restaurants, beverage brands, and distributors.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">Explore Products</a>
+            <a href="https://wa.me/601161707216" class="btn btn-secondary" target="_blank">WhatsApp Us</a>
+            <a href="tel:+601161707216" class="btn btn-secondary">Call Us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide slide-paper">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Biodegradable Straw Collection</h1>
+          <div class="tagline">Eco-Friendly & Business Ready</div>
+          <p>Ideal for brands looking for practical and sustainable drinking straw solutions with reliable supply support.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">View Products</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide slide-plastic">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Custom Straw Supply for Your Brand</h1>
+          <div class="tagline">Reliable Quality, Fast Response</div>
+          <p>Suitable for cafes, F&B chains, retail stores, and distributors who need consistent supply and easy communication.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Request Quotation</a>
+          </div>
+        </div>
+      </div>
+
+           <div class="slide slide-sugarcane">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Sugarcane Straw Collection</h1>
+          <div class="tagline">Natural, Durable & Sustainable</div>
+          <p>Perfect for brands seeking eco-friendly straw alternatives with strong presentation and practical everyday use.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">View Products</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+      <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+
+      <div class="slider-dots">
+  <span class="dot active" onclick="goToSlide(0)"></span>
+  <span class="dot" onclick="goToSlide(1)"></span>
+  <span class="dot" onclick="goToSlide(2)"></span>
+  <span class="dot" onclick="goToSlide(3)"></span>
+</div>
+    </div>
+  </header>
+
+  <section class="products" id="products">
+  <h2>Our Product Range</h2>
+  <p class="products-subtitle">
+    We supply high-quality drinking straw solutions for cafes, restaurants, beverage brands, wholesalers, and distributors. Custom sizes, colors, and printing options are available.
+  </p>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/bio.png" alt="Biodegradable Straw">
+      </div>
+      <div class="product-content">
+        <h3>Biodegradable Straw</h3>
+        <p>
+          Eco-conscious straw solutions designed for modern F&B businesses seeking a greener alternative without compromising functionality.
+        </p>
+        <ul class="product-specs">
+          <li>Material: PLA / Corn Starch</li>
+          <li>Length: 20cm</li>
+          <li>Diameter: 6mm</li>
+          <li>Custom printing available</li>
+        </ul>
+        <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/plastic.png" alt="Plastic Straw">
+      </div>
+      <div class="product-content">
+        <h3>Plastic Straw</h3>
+        <p>
+          Practical and cost-effective straw solutions with reliable quality, suitable for large-volume beverage operations and daily business use.
+        </p>
+        <ul class="product-specs">
+          <li>Material: PP / PET</li>
+          <li>Length: 20cm</li>
+          <li>Diameter: 6mm</li>
+          <li>Custom printing available</li>
+        </ul>
+        <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/paper.png" alt="Paper Straw">
+      </div>
+      <div class="product-content">
+        <h3>Paper Straw</h3>
+        <p>
+          Stylish and sustainable paper straws available in multiple designs, ideal for branded beverages, cafes, and environmentally conscious outlets.
+        </p>
+        <ul class="product-specs">
+          <li>Material: Paper / PLA Coating</li>
+          <li>Length: 20cm</li>
+          <li>Diameter: 6mm</li>
+          <li>Custom printing available</li>
+        </ul>
+        <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="images/sugar.png" alt="Sugarcane Straw">
+      </div>
+      <div class="product-content">
+        <h3>Sugarcane Straw</h3>
+        <p>
+          Made from renewable plant-based material, sugarcane straws offer a more sustainable and premium choice for modern beverage and food service businesses.
+        </p>
+        <ul class="product-specs">
+          <li>Material: Sugarcane Fiber / Bagasse</li>
+          <li>Length: 20cm</li>
+          <li>Diameter: 6mm</li>
+          <li>Custom printing available</li>
+        </ul>
+        <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section" id="why-us">
+    <h2 class="section-title">Why Choose Us</h2>
+    <p class="section-subtitle">A trusted supply partner for businesses that value consistency, quality, and fast communication.</p>
+    <div class="why-us">
+      <div class="why-box"><h3>Reliable Supply</h3><p>Consistent product availability and dependable support for your ongoing business requirements.</p></div>
+      <div class="why-box"><h3>Eco-Friendly Focus</h3><p>Offering greener alternatives to help businesses align with more sustainable packaging choices.</p></div>
+      <div class="why-box"><h3>Business Ready</h3><p>Suitable for cafes, F&B chains, restaurants, retailers, and wholesale distribution channels.</p></div>
+      <div class="why-box"><h3>Fast Response</h3><p>Quick quotation support and easy communication via email and WhatsApp for smooth enquiries.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">Send us your enquiry and we’ll get back to you for quotation, product details, or sample arrangement.</p>
+    <div class="contact-wrapper">
+      <div class="contact-card">
+        <h3>Get In Touch</h3>
+        <p><strong>Company:</strong> Biosip Straw (M) Sdn Bhd</p>
+        <p><strong>Email:</strong> <a href="mailto:biosipz99@gmail.com">biosipz99@gmail.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/601161707216" target="_blank">+60 11-6170 7216</a></p>
+        <p><strong>Call:</strong> <a href="tel:+601161707216">+60 11-6170 7216</a></p>
+        <p><strong>Tagline:</strong> Sip Smart Sip Green</p>
+      </div>
+      <div class="form-card">
+        <h3>Send an Enquiry</h3>
+        <form onsubmit="sendToWhatsApp(event)">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="text" id="company" placeholder="Company Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="message" placeholder="Tell us what product you are looking for..." required></textarea>
+          <button type="submit" class="submit-btn">Send via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Biosip Straw (M) Sdn Bhd. All Rights Reserved.</footer>
+  <a href="https://wa.me/601161707216" class="whatsapp-float" target="_blank">WhatsApp Us</a>
+
+  <div class="mobile-contact-bar">
+    <a href="tel:+601161707216" class="mobile-contact-btn mobile-call">Call Now</a>
+    <a href="https://wa.me/601161707216" class="mobile-contact-btn mobile-whatsapp" target="_blank">WhatsApp Now</a>
+  </div>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const text = `Hello Biosip Straw (M) Sdn Bhd,%0A%0AName: ${name}%0ACompany: ${company}%0AEmail: ${email}%0AEnquiry: ${message}`;
+      const phone = '601161707216';
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+
+  currentSlide = index;
+}
+
+    function changeSlide(direction) {
+      let newIndex = currentSlide + direction;
+      if (newIndex < 0) newIndex = slides.length - 1;
+      if (newIndex >= slides.length) newIndex = 0;
+      showSlide(newIndex);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+  </script>
+
+</body>
+</html>
