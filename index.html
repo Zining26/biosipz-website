@@ -3,1892 +3,918 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proper Pack (M) Sdn Bhd | Packaging & Hygiene Solutions</title>
-  <meta name="description" content="Proper Pack (M) Sdn Bhd supplies face masks, hand gloves, food wraps, tapes and packaging solutions for F&B, retail, industrial and commercial use." />
+  <title>Biosip Straw (M) Sdn Bhd | Sip Smart Sip Green</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937; background: #f8fafc; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: #ffffff;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    :root {
-      --primary: #11B5F5;
-      --primary-dark: #0d95ca;
-      --dark: #0f172a;
-      --text: #334155;
-      --light: #f8fbfd;
-      --border: #e5e7eb;
-      --white: #ffffff;
-      --success: #25D366;
-      --danger: #ef4444;
-    }
-
-    /* Header */
-    header {
+    .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.96);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid #eef2f7;
+      border-bottom: 1px solid #e5e7eb;
     }
 
-    .nav {
+    .nav-container {
       max-width: 1200px;
       margin: auto;
       padding: 14px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      position: relative;
-    }
-
-    .logo {
-      display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 20px;
     }
 
-    .logo img {
-      height: 54px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .logo-text strong {
-      font-size: 16px;
-      color: var(--dark);
-    }
-
-    .logo-text span {
-      font-size: 12px;
-      color: var(--text);
+    .brand {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #065f46;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
-      align-items: center;
-      font-size: 15px;
-      color: var(--dark);
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-cta {
-      background: var(--primary);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-cta:hover {
-      background: var(--primary-dark);
-    }
-
-    .enquiry-btn {
-      position: relative;
-      background: white;
-      border: 1px solid #dbe3ea;
-      color: var(--dark);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .enquiry-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .enquiry-count {
-      position: absolute;
-      top: -8px;
-      right: -6px;
-      background: var(--danger);
-      color: white;
-      min-width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      padding: 0 6px;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #f7fcff 0%, #edf9ff 100%);
-      padding: 80px 20px 60px;
-      overflow: hidden;
-    }
-
-    .hero-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(17,181,245,0.1);
-      color: var(--primary-dark);
-      border: 1px solid rgba(17,181,245,0.2);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      line-height: 1.08;
-      color: var(--dark);
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero p {
-      color: var(--text);
-      font-size: 18px;
-      max-width: 620px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
+      gap: 18px;
       flex-wrap: wrap;
-      gap: 14px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.3s ease;
-      font-size: 15px;
-      border: none;
-      cursor: pointer;
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 0.95rem;
     }
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
+    .nav-links a:hover { color: #059669; }
 
-    .btn-primary:hover {
-      background: var(--primary-dark);
-    }
-
-    .btn-secondary {
-      border: 1px solid #cbd5e1;
-      color: var(--dark);
-      background: white;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    /* HERO SLIDER */
-    .hero-slider-wrap {
-      width: 100%;
-      max-width: 620px;
-      margin: 0 auto;
-    }
+    header { color: white; position: relative; }
 
     .hero-slider {
       position: relative;
       width: 100%;
-      height: 520px;
-      border-radius: 32px;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      padding: 0;
+      height: 100vh;
+      min-height: 700px;
+      overflow: hidden;
     }
 
     .slide {
       position: absolute;
-      inset: 18px;
-      opacity: 0;
-      transform: scale(1.02);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      border-radius: 24px;
-      overflow: hidden;
-      pointer-events: none;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background-size: cover;
+      background-position: center;
     }
 
-    .slide.active {
-      opacity: 1;
-      transform: scale(1);
-      pointer-events: auto;
+    .slide.active { display: flex; }
+
+    .slide.slide-bio {
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/paperstraw.png');
+      background-size: cover;
+      background-position: center;
     }
 
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 24px;
-      display: block;
-      background: transparent;
+    .slide.slide-paper {
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/biostraw.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide.slide-plastic {
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/plasticstraw.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide.slide-sugarcane {
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('images/sugarcane.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
     }
 
     .slider-btn {
-      display: none !important;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
     }
 
+    .slider-btn.prev { left: 20px; }
+    .slider-btn.next { right: 20px; }
+
     .slider-dots {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      justify-content: center;
       gap: 10px;
-      margin-top: 18px;
+      z-index: 3;
     }
 
     .dot {
       width: 12px;
       height: 12px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.18);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
-    .dot.active {
-      width: 30px;
-      background: #0ea5e9;
+    .dot.active { background: white; }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      line-height: 1.2;
     }
 
-    /* Sections */
+    .tagline {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      opacity: 0.95;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #065f46;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.16);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
     .section {
       max-width: 1200px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 70px 20px;
     }
 
     .section-title {
-      font-size: 38px;
-      color: var(--dark);
       text-align: center;
+      font-size: 2.1rem;
       margin-bottom: 12px;
+      color: #0f172a;
     }
 
     .section-subtitle {
       text-align: center;
-      color: var(--text);
-      max-width: 760px;
-      margin: 0 auto 42px;
-      font-size: 16px;
+      color: #475569;
+      margin-bottom: 42px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .about-box {
-      background: var(--light);
-      border: 1px solid #eef2f7;
-      border-radius: 24px;
-      padding: 28px;
-    }
-
-    .about-box h3 {
-      color: var(--dark);
-      font-size: 24px;
-      margin-bottom: 14px;
-    }
-
-    .about-box p {
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-
-    .about-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .about-list li {
-      background: white;
-      border: 1px solid #eef2f7;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-size: 14px;
-      color: var(--dark);
-      font-weight: 600;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .stat {
-      background: white;
-      border: 1px solid #eef2f7;
-      border-radius: 20px;
-      padding: 24px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.03);
-    }
-
-    .stat h4 {
-      font-size: 32px;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .stat p {
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    /* Products */
+    /* PRODUCTS */
     .products {
-      background: #f8fbfd;
+      padding: 80px 20px;
+      background: #f8faf9;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #1b4332;
+      margin-bottom: 12px;
+    }
+
+    .products-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      color: #5f6f65;
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     .product-grid {
+      max-width: 1300px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
     }
 
     .product-card {
-      background: white;
-      border-radius: 24px;
+      background: #ffffff;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid #eef2f7;
-      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.04);
-      transition: 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
       display: flex;
       flex-direction: column;
       height: 100%;
     }
 
     .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
     }
 
-    .product-gallery {
-      padding: 16px 16px 0;
-    }
-
-    .product-main-image {
-      width: 100%;
-      height: 240px;
-      border-radius: 18px;
+    .product-slider {
+      position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #eaf8ff, #f7fcff);
-      border: 1px solid #eef2f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
+      height: 260px;
+      background: #fff;
     }
 
-    .product-main-image img {
+    .product-slides {
+      display: flex;
       width: 100%;
-      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .product-slides img {
+      width: 100%;
+      min-width: 100%;
+      height: 260px;
       object-fit: contain;
+      background: #fff;
+      padding: 16px;
     }
 
-    .product-thumbs {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-    }
-
-    .product-thumbs::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .product-thumbs::-webkit-scrollbar-thumb {
-      background: #dbeafe;
-      border-radius: 999px;
-    }
-
-    .product-thumb {
-      min-width: 64px;
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid transparent;
+    .product-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.45);
+      color: white;
+      border: none;
+      width: 38px;
+      height: 38px;
       cursor: pointer;
-      background: #f8fbfd;
-      flex-shrink: 0;
-      transition: 0.25s ease;
+      font-size: 18px;
+      border-radius: 50%;
+      z-index: 2;
     }
 
-    .product-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-thumb.active {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(17,181,245,0.12);
-    }
-
-    .product-thumb:hover {
-      transform: translateY(-2px);
-    }
+    .product-arrow.prev { left: 10px; }
+    .product-arrow.next { right: 10px; }
 
     .product-content {
-      padding: 22px;
+      padding: 24px 22px 24px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
     .product-content h3 {
-      font-size: 22px;
-      color: var(--dark);
-      margin-bottom: 10px;
+      font-size: 1.35rem;
+      color: #0b2545;
+      margin-bottom: 14px;
+      font-weight: 700;
     }
 
     .product-content p {
-      color: var(--text);
-      font-size: 15px;
-      margin-bottom: 14px;
-    }
-
-    .add-cart-btn {
-      margin-bottom: 12px;
-      padding: 10px 14px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: 0.3s ease;
-    }
-
-    .add-cart-btn:hover {
-      background: var(--primary-dark);
-    }
-
-    .product-size {
-      margin: 10px 0 14px;
-    }
-
-    .product-size span {
-      display: block;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .size-btn {
-      border: 1px solid #cbd5e1;
-      background: white;
-      padding: 7px 12px;
-      margin: 4px 6px 0 0;
-      cursor: pointer;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      transition: 0.25s ease;
-    }
-
-    .size-btn.active {
-      background: var(--dark);
-      color: white;
-      border-color: var(--dark);
-    }
-
-    .size-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .size-btn.active:hover {
-      color: white;
-    }
-
-    .product-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .tag {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      background: rgba(17,181,245,0.1);
-      padding: 7px 10px;
-      border-radius: 999px;
-    }
-
-    /* Why Us */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .why-card {
-      background: white;
-      border: 1px solid #eef2f7;
-      border-radius: 22px;
-      padding: 26px 20px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(15, 23, 42, 0.03);
-      transition: 0.3s ease;
-    }
-
-    .why-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(17,181,245,0.3);
-    }
-
-    .why-icon {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .why-card h4 {
-      font-size: 18px;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .why-card p {
-      font-size: 14px;
-      color: var(--text);
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, var(--primary), #39c7ff);
-      border-radius: 30px;
-      padding: 50px 30px;
-      color: white;
-      text-align: center;
-      max-width: 1200px;
-      margin: 0 auto 80px;
-    }
-
-    .cta h2 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      max-width: 720px;
-      margin: 0 auto 24px;
-      opacity: 0.95;
-      font-size: 16px;
-    }
-
-    .cta .btn {
-      background: white;
-      color: var(--primary-dark);
-    }
-
-    .cta .btn:hover {
-      background: #f3fbff;
-    }
-
-    /* Address & Map Section */
-    .address-section {
-      padding: 80px 20px;
-      background: #f8fafc;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .address-heading {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .address-heading h2 {
-      font-size: 38px;
-      color: var(--dark);
-      margin-bottom: 10px;
-    }
-
-    .address-heading p {
-      color: var(--text);
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 16px;
-    }
-
-    .address-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 30px;
-      align-items: stretch;
-      margin-top: 40px;
-    }
-
-    .address-card {
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .address-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #0f172a;
-    }
-
-    .address-card p {
-      margin-bottom: 18px;
-      color: #475569;
+      color: #4a5568;
       line-height: 1.8;
-      font-size: 1rem;
+      font-size: 0.96rem;
+      margin-bottom: 18px;
     }
 
-    .map-card {
-      border-radius: 18px;
-      overflow: hidden;
-      min-height: 420px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      background: #fff;
+    .product-specs {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
     }
 
-    .map-card iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 420px;
-      display: block;
+    .product-specs li {
+      margin-bottom: 8px;
+      color: #065f46;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
-    .map-btn {
+    .product-specs li::before {
+      content: "•";
+      color: #198754;
+      font-weight: bold;
       display: inline-block;
-      margin-top: 10px;
-      background: #16a34a;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s ease;
+      width: 16px;
     }
 
-    .map-btn:hover {
-      background: #15803d;
+    .product-btn {
+      margin-top: auto;
+      display: inline-block;
+      text-align: center;
+      background: #198754;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .product-btn:hover {
+      background: #146c43;
       transform: translateY(-2px);
     }
 
-    /* Contact */
+    /* WHY US */
+    .why-us {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .why-box {
+      background: white;
+      border: 1px solid #d1fae5;
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .why-box h3 {
+      color: #065f46;
+      margin-bottom: 8px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: #f8faf9;
+      padding: 80px 20px;
+    }
+
     .contact-grid {
+      max-width: 1300px;
+      margin: 40px auto 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      gap: 30px;
     }
 
-    .contact-card {
-      background: white;
-      border: 1px solid #eef2f7;
+    .contact-info-card,
+    .contact-form-card {
+      background: #ffffff;
       border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
 
-    .contact-card h3 {
-      font-size: 24px;
-      color: var(--dark);
+    .contact-info-card h3,
+    .contact-form-card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+
+    .contact-info-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      color: #2d3748;
+      font-weight: 700;
+    }
+
+    .shop-address {
+      font-size: 1.05rem;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .map-wrapper {
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .contact-detail p {
+      font-size: 1.05rem;
       margin-bottom: 16px;
+      color: #374151;
     }
 
-    .contact-info {
-      display: grid;
-      gap: 14px;
+    .contact-detail a {
+      color: #374151;
+      text-decoration: none;
     }
 
-    .info-item {
-      background: var(--light);
-      border: 1px solid #eef2f7;
-      border-radius: 16px;
-      padding: 14px;
-    }
+    .contact-detail a:hover { color: #16a34a; }
 
-    .info-item strong {
+    .form-group { margin-bottom: 22px; }
+
+    .form-group label {
       display: block;
-      color: var(--dark);
-      margin-bottom: 4px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #1f2937;
+      font-size: 1.05rem;
     }
 
-    .info-item span {
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-    }
-
-    input, textarea {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
-      padding: 14px 16px;
+      padding: 16px 18px;
+      border: 1px solid #d1d5db;
       border-radius: 14px;
-      border: 1px solid #dbe3ea;
-      font-size: 15px;
+      font-size: 1rem;
       outline: none;
+      transition: 0.3s ease;
+      background: #fff;
     }
 
-    input:focus, textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(17,181,245,0.08);
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
     }
 
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .submit-btn {
+    .whatsapp-btn {
+      width: 100%;
+      background: #22c55e;
+      color: #fff;
       border: none;
+      padding: 18px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      border-radius: 14px;
       cursor: pointer;
+      transition: 0.3s ease;
     }
 
-    /* Footer */
+    .whatsapp-btn:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    /* FLOATING */
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      z-index: 1001;
+    }
+
     footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 26px 20px;
+      text-align: center;
+      padding: 20px;
+      background: #022c22;
+      color: #d1fae5;
+      font-size: 0.92rem;
       margin-top: 30px;
     }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 14px;
-    }
-
-    .footer-inner strong {
-      color: white;
-    }
-
-    /* Floating Buttons */
-    .floating-actions {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 999;
-    }
-
-    .float-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      color: white;
-      font-size: 24px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
-      transition: 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .float-btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .whatsapp {
-      background: #25D366;
-    }
-
-    .call {
-      background: var(--primary);
-    }
-
-    .top-btn {
-      background: #0f172a;
+    .mobile-contact-bar {
       display: none;
-    }
-
-    .top-btn.show {
-      display: flex;
-    }
-
-    /* Modal */
-    .modal-overlay {
       position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 20px;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal {
-      width: 100%;
-      max-width: 560px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1002;
       background: white;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.2);
-      max-height: 80vh;
-      overflow-y: auto;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.12);
+      padding: 10px 12px;
+      gap: 10px;
     }
 
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .modal-header h3 {
-      font-size: 24px;
-      color: var(--dark);
-    }
-
-    .close-btn {
-      border: none;
-      background: #f1f5f9;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 20px;
-      color: var(--dark);
-    }
-
-    .enquiry-list {
-      display: grid;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .enquiry-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      padding: 14px;
-      border-radius: 16px;
-      background: var(--light);
-      border: 1px solid #eaf2f7;
-    }
-
-    .enquiry-item span {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    .remove-item-btn {
-      border: none;
-      background: #fee2e2;
-      color: #b91c1c;
-      padding: 8px 10px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .empty-enquiry {
+    .mobile-contact-btn {
+      flex: 1;
       text-align: center;
-      color: var(--text);
-      padding: 18px;
-      background: #f8fbfd;
-      border: 1px dashed #cbd5e1;
-      border-radius: 16px;
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.95rem;
     }
 
-    .modal-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-danger {
-      background: var(--danger);
+    .mobile-call {
+      background: #065f46;
       color: white;
     }
 
-    .btn-danger:hover {
-      background: #dc2626;
+    .mobile-whatsapp {
+      background: #25D366;
+      color: white;
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-inner,
-      .about-grid,
-      .contact-grid,
-      .address-grid {
-        grid-template-columns: 1fr;
-      }
-
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
     }
 
-    @media (max-width: 992px) {
-      .hero-slider {
-        height: 380px;
-        max-width: 100%;
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info-card,
+      .contact-form-card {
+        padding: 28px;
+      }
+
+      .contact-info-card h3,
+      .contact-form-card h3 {
+        font-size: 1.6rem;
       }
     }
 
     @media (max-width: 768px) {
-      .nav {
-        flex-wrap: wrap;
-        justify-content: center;
+      header h1 { font-size: 2rem; }
+      .section-title { font-size: 1.7rem; }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
+      .nav-links { gap: 12px; }
 
-      .logo {
-        width: 100%;
-        justify-content: center;
-      }
+      .whatsapp-float { display: none; }
+      .mobile-contact-bar { display: flex; }
 
-      .nav-actions {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
+      body { padding-bottom: 80px; }
 
       .hero-slider {
-        height: 300px;
+        height: 85vh;
+        min-height: 600px;
       }
 
-      .slide {
-        inset: 12px;
+      .slider-btn {
+        width: 40px;
+        height: 40px;
       }
 
-      .slide img {
-        border-radius: 18px;
+      .products {
+        padding: 60px 16px;
       }
 
-      .stats,
-      .product-grid,
-      .why-grid {
+      .products h2 {
+        font-size: 1.8rem;
+      }
+
+      .product-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .section {
-        padding: 60px 20px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .address-heading h2 {
-        font-size: 30px;
-      }
-
-      .cta h2 {
-        font-size: 28px;
-      }
-
-      .floating-actions {
-        right: 14px;
-        bottom: 14px;
-      }
-
-      .float-btn {
-        width: 54px;
-        height: 54px;
-        font-size: 22px;
-      }
-
-      .product-main-image {
+      .product-slider,
+      .product-slides img {
         height: 220px;
       }
 
-      .product-thumb {
-        width: 58px;
-        height: 58px;
-        min-width: 58px;
+      .product-content {
+        padding: 20px 18px 22px;
       }
 
-      .map-card,
-      .map-card iframe {
-        min-height: 320px;
+      .product-content h3 {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Enquiry Modal -->
-  <div class="modal-overlay" id="enquiryModal">
-    <div class="modal">
-      <div class="modal-header">
-        <h3>Your Enquiry List</h3>
-        <button class="close-btn" onclick="closeEnquiryModal()">×</button>
-      </div>
-
-      <div id="enquiryListContainer" class="enquiry-list"></div>
-
-      <div class="modal-actions">
-        <button class="btn btn-secondary" onclick="closeEnquiryModal()">Continue Browsing</button>
-        <button class="btn btn-primary" onclick="scrollToContact()">Proceed to Enquiry Form</button>
-        <button class="btn btn-danger" onclick="clearEnquiryList()">Clear All</button>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="brand">Biosip Straw (M) Sdn Bhd</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <!-- Header -->
-  <header>
-    <div class="nav">
-      <div class="logo">
-        <img src="images/logo.png" alt="Proper Pack Logo" />
-        <div class="logo-text">
-          <strong>Proper Pack (M) Sdn Bhd</strong>
-          <span>Safety Packaging & Hygiene Solutions</span>
+  <header id="home">
+    <div class="hero-slider">
+      <div class="slide slide-bio active">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Premium Straw Solutions for Modern Businesses</h1>
+          <div class="tagline">Sip Smart Sip Green</div>
+          <p>Biosip Straw (M) Sdn Bhd supplies Biodegradable, Plastic, Sugarcane and Paper Straws for cafes, restaurants, beverage brands, and distributors.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">Explore Products</a>
+            <a href="https://wa.me/601161707216" class="btn btn-secondary" target="_blank">WhatsApp Us</a>
+            <a href="tel:+601161707216" class="btn btn-secondary">Call Us</a>
+          </div>
         </div>
       </div>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#whyus">Why Us</a>
-        <a href="#location">Location</a>
-        <a href="#contact">Contact</a>
+      <div class="slide slide-paper">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Biodegradable Straw Collection</h1>
+          <div class="tagline">Eco-Friendly & Business Ready</div>
+          <p>Ideal for brands looking for practical and sustainable drinking straw solutions with reliable supply support.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">View Products</a>
+          </div>
+        </div>
       </div>
 
-      <div class="nav-actions">
-        <button class="enquiry-btn" onclick="openEnquiryModal()">
-          Enquiry List
-          <span class="enquiry-count" id="enquiryCount">0</span>
-        </button>
-        <a href="https://wa.me/60183894753" class="nav-cta" target="_blank">WhatsApp Us</a>
+      <div class="slide slide-plastic">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Custom Straw Supply for Your Brand</h1>
+          <div class="tagline">Reliable Quality, Fast Response</div>
+          <p>Suitable for cafes, F&B chains, retail stores, and distributors who need consistent supply and easy communication.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Request Quotation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide slide-sugarcane">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h1>Sugarcane Straw Collection</h1>
+          <div class="tagline">Natural, Durable & Sustainable</div>
+          <p>Perfect for brands seeking eco-friendly straw alternatives with strong presentation and practical everyday use.</p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">View Products</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+      <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+
+      <div class="slider-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-badge">Trusted Supply for F&B, Retail & Commercial Use</div>
-        <h1>Reliable <span>Safety Packaging & Hygiene</span> Products For Your Business</h1>
-        <p>
-          Proper Pack (M) Sdn Bhd supplies high-quality face masks, hand gloves, food wraps, tapes and essential packaging solutions tailored for food & beverage operations, retail businesses, and industrial users.
-        </p>
-        <div class="hero-buttons">
-          <a href="#products" class="btn btn-primary">Explore Products</a>
-          <a href="#contact" class="btn btn-secondary">Request Quotation</a>
-        </div>
-      </div>
-
-      <div class="hero-slider-wrap">
-        <div class="hero-slider" id="heroSlider">
-          <div class="slide active">
-            <img src="images/maskpng.png" alt="Face Masks">
-          </div>
-          <div class="slide">
-            <img src="images/nitritepng.png" alt="Nitrile Gloves">
-          </div>
-          <div class="slide">
-            <img src="images/cpepng.png" alt="CPE Hand Gloves">
-          </div>
-          <div class="slide">
-            <img src="images/frwcpng.png" alt="Food Wraps with Cutter">
-          </div>
-        </div>
-
-        <div class="slider-dots">
-          <span class="dot active" onclick="goToSlide(0)"></span>
-          <span class="dot" onclick="goToSlide(1)"></span>
-          <span class="dot" onclick="goToSlide(2)"></span>
-          <span class="dot" onclick="goToSlide(3)"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="section" id="about">
-    <h2 class="section-title">About Proper Pack</h2>
-    <p class="section-subtitle">
-      Your dependable partner for packaging and hygiene supply solutions in Malaysia.
-    </p>
-
-    <div class="about-grid">
-      <div class="about-box">
-        <h3>Supplying Practical Products That Businesses Need Daily</h3>
-        <p>
-          Proper Pack (M) Sdn Bhd focuses on supplying essential packaging and hygiene products to support daily operations across food & beverage outlets, restaurants, cafés, kitchens, retail stores, offices, and industrial users.
-        </p>
-        <p>
-          We aim to provide consistent product quality, practical solutions, and dependable service for businesses looking for a trusted long-term supplier.
-        </p>
-
-        <ul class="about-list">
-          <li>✔ Face Masks & Hygiene Consumables</li>
-          <li>✔ Hand Gloves for Food Handling & Safety</li>
-          <li>✔ Food Wraps & Packaging Supplies</li>
-          <li>✔ Tapes & General Packaging Products</li>
-          <li>✔ Bulk Supply for B2B Orders</li>
-        </ul>
-      </div>
-
-      <div class="stats">
-        <div class="stat">
-          <h4>B2B</h4>
-          <p>Focused on wholesale and business supply</p>
-        </div>
-        <div class="stat">
-          <h4>F&B</h4>
-          <p>Ideal for restaurants, cafés & kitchens</p>
-        </div>
-        <div class="stat">
-          <h4>Bulk</h4>
-          <p>Suitable for regular recurring orders</p>
-        </div>
-        <div class="stat">
-          <h4>OEM</h4>
-          <p>Custom/private label options (if applicable)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section class="section products" id="products">
-    <h2 class="section-title">Our Products</h2>
-    <p class="section-subtitle">
-      A range of essential products designed to support food safety, hygiene, packaging, and daily operational needs.
+  <section class="products" id="products">
+    <h2>Our Product Range</h2>
+    <p class="products-subtitle">
+      We supply high-quality drinking straw solutions for cafes, restaurants, beverage brands, wholesalers, and distributors. Custom sizes, colors, and printing options are available.
     </p>
 
     <div class="product-grid">
 
-      <!-- Product 1 -->
-      <div class="product-card" data-name="Face Masks">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/mask.png" alt="Face Masks" class="main-product-img">
+      <div class="product-card">
+        <div class="product-slider">
+          <div class="product-slides">
+            <img src="images/bio.png" alt="Biodegradable Straw 1">
+            <img src="images/bio1.jpg" alt="Biodegradable Straw 2">
           </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/mask.png')">
-              <img src="images/mask.png" alt="Face Mask 1">
-            </div>
-          </div>
+          <button class="product-arrow prev">&#10094;</button>
+          <button class="product-arrow next">&#10095;</button>
         </div>
-
         <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>Face Masks</h3>
-          <p>Disposable and practical face masks suitable for workplaces, food handling environments, and daily commercial use.</p>
-
-          <div class="product-size">
-            <span>Colour:</span>
-            <button class="size-btn active" data-color="Black" onclick="selectOption(this)">Black</button>
-            <button class="size-btn" data-color="Blue" onclick="selectOption(this)">Blue</button>
-          </div>
-
-          <div class="product-tags">
-            <span class="tag">Disposable</span>
-            <span class="tag">Comfort Fit</span>
-            <span class="tag">Hygiene Use</span>
-          </div>
+          <h3>Biodegradable Straw</h3>
+          <p>Eco-conscious straw solutions designed for modern F&B businesses seeking a greener alternative without compromising functionality.</p>
+          <ul class="product-specs">
+            <li>Material: PLA / Corn Starch</li>
+            <li>Custom printing available</li>
+          </ul>
+          <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
         </div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-card" data-name="Nitrile Gloves">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/nitrite.png" alt="Nitrile Gloves" class="main-product-img">
+      <div class="product-card">
+        <div class="product-slider">
+          <div class="product-slides">
+            <img src="images/plastic.png" alt="Plastic Straw 1">
+            <img src="images/plastic1.jpg" alt="Plastic Straw 2">
           </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/nitrite.png')">
-              <img src="images/nitrite.png" alt="Nitrile Gloves 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/nitriteblue.jpg')">
-              <img src="images/nitriteblue.jpg" alt="Nitrile Gloves 2">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/nitriteblack.jpg')">
-              <img src="images/nitriteblack.jpg" alt="Nitrile Gloves 3">
-            </div>
-          </div>
+          <button class="product-arrow prev">&#10094;</button>
+          <button class="product-arrow next">&#10095;</button>
         </div>
         <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>Nitrile Gloves</h3>
-          <p>Reliable nitrile gloves for food preparation, hygienic handling, kitchen operations, and general commercial use.</p>
-
-          <div class="product-size">
-            <span>Size:</span>
-            <button class="size-btn active" data-size="S" onclick="selectOption(this)">S</button>
-            <button class="size-btn" data-size="M" onclick="selectOption(this)">M</button>
-            <button class="size-btn" data-size="L" onclick="selectOption(this)">L</button>
-            <button class="size-btn" data-size="XL" onclick="selectOption(this)">XL</button>
-          </div>
-
-          <div class="product-tags">
-            <span class="tag">Food Handling</span>
-            <span class="tag">Disposable</span>
-            <span class="tag">Safe Use</span>
-          </div>
+          <h3>Plastic Straw</h3>
+          <p>Practical and cost-effective straw solutions with reliable quality, suitable for large-volume beverage operations and daily business use.</p>
+          <ul class="product-specs">
+            <li>Material: PP / PET</li>
+            <li>Custom printing available</li>
+          </ul>
+          <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
         </div>
       </div>
 
-      <!-- Product 3 -->
-      <div class="product-card" data-name="Food Wraps with Cutter">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/foodwrapwithcutter.jpg" alt="Food Wraps" class="main-product-img">
+      <div class="product-card">
+        <div class="product-slider">
+          <div class="product-slides">
+            <img src="images/paper.png" alt="Paper Straw 1">
+            <img src="images/paper1.jpg" alt="Paper Straw 2">
           </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/foodwrapwithcutter.jpg')">
-              <img src="images/foodwrapwithcutter.jpg" alt="Food Wraps 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/frwc12.jpg')">
-              <img src="images/frwc12.jpg" alt="Food Wraps 2">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/frwc18.jpg')">
-              <img src="images/frwc18.jpg" alt="Food Wraps 3">
-            </div>
-          </div>
+          <button class="product-arrow prev">&#10094;</button>
+          <button class="product-arrow next">&#10095;</button>
         </div>
         <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>Food Wraps</h3>
-          <p>Flexible food wrapping solutions to help preserve freshness, improve storage, and support takeaway or kitchen operations.</p>
-
-          <div class="product-size">
-            <span>Size:</span>
-            <button class="size-btn active" data-size='12"' onclick="selectOption(this)">12"</button>
-            <button class="size-btn" data-size='18"' onclick="selectOption(this)">18"</button>
-          </div>
-
-          <div class="product-tags">
-            <span class="tag">Freshness</span>
-            <span class="tag">Kitchen Use</span>
-            <span class="tag">F&B Supply</span>
-          </div>
+          <h3>Paper Straw</h3>
+          <p>Stylish and sustainable paper straws available in multiple designs, ideal for branded beverages, cafes, and environmentally conscious outlets.</p>
+          <ul class="product-specs">
+            <li>Material: Paper / PLA Coating</li>
+            <li>Custom printing available</li>
+          </ul>
+          <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
         </div>
       </div>
 
-      <!-- Product 4 -->
-      <div class="product-card" data-name="Pop Up Tissue">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/popup1.png" alt="Pop Up Tissue" class="main-product-img">
+      <div class="product-card">
+        <div class="product-slider">
+          <div class="product-slides">
+            <img src="images/sugar.png" alt="Sugarcane Straw 1">
+            <img src="images/sugarcane1.jpg" alt="Sugarcane Straw 2">
           </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/popup1.png')">
-              <img src="images/popup1.png" alt="Pop Up Tissue 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/popuptissue.jpg')">
-              <img src="images/popuptissue.jpg" alt="Pop Up Tissue 2">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/popuptissue1.jpg')">
-              <img src="images/popuptissue1.jpg" alt="Pop Up Tissue 3">
-            </div>
-          </div>
+          <button class="product-arrow prev">&#10094;</button>
+          <button class="product-arrow next">&#10095;</button>
         </div>
         <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>Pop Up Tissue</h3>
-          <p>Convenient and hygienic pop-up tissue for easy dispensing, daily cleaning, workplace use, and commercial environments.</p>
-
-          <div class="product-tags">
-            <span class="tag">Soft & Gentle</span>
-            <span class="tag">Hygienic Use</span>
-            <span class="tag">Easy Dispense</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="product-card" data-name="CPE Gloves">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/cpe.png" alt="CPE Gloves" class="main-product-img">
-          </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/cpe.png')">
-              <img src="images/cpe.png" alt="CPE Gloves 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/cpe1.png')">
-              <img src="images/cpe1.png" alt="CPE Gloves 2">
-            </div>
-          </div>
-        </div>
-        <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>CPE Gloves</h3>
-          <p>Lightweight CPE gloves suitable for food handling, hygiene protection, and general disposable use. Ideal for restaurants, kitchens, and food service operations.</p>
-
-          <div class="product-size">
-            <span>Size:</span>
-            <button class="size-btn active" data-size="M" onclick="selectOption(this)">M</button>
-            <button class="size-btn" data-size="L" onclick="selectOption(this)">L</button>
-          </div>
-
-          <div class="product-tags">
-            <span class="tag">CPE Material</span>
-            <span class="tag">Disposable</span>
-            <span class="tag">Food Handling</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 6 -->
-      <div class="product-card" data-name="HDPE Gloves">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/hdpegloves.jpg" alt="HDPE Gloves" class="main-product-img">
-          </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/hdpegloves.jpg')">
-              <img src="images/hdpegloves.jpg" alt="HDPE Gloves 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/hdpegloves1.jpg')">
-              <img src="images/hdpegloves1.jpg" alt="HDPE Gloves 2">
-            </div>
-          </div>
-        </div>
-        <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>HDPE Gloves</h3>
-          <p>Sturdy HDPE gloves designed for durability and protection in various industrial and commercial applications.</p>
-
-          <div class="product-tags">
-            <span class="tag">HDPE Disposable Gloves</span>
-            <span class="tag">Food Handling Safe</span>
-            <span class="tag">Disposable & Hygienic</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 7 -->
-      <div class="product-card" data-name="Hairnet">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/hairnet.png" alt="Hairnet" class="main-product-img">
-          </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/hairnet.png')">
-              <img src="images/hairnet.png" alt="Hairnet 1">
-            </div>
-          </div>
-        </div>
-        <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>Hairnet</h3>
-          <p>High-quality hairnets designed to keep hair out of food and products, ensuring hygiene and compliance.</p>
-
-          <div class="product-size">
-            <span>Colour:</span>
-            <button class="size-btn active" data-color="Blue" onclick="selectOption(this)">Blue</button>
-            <button class="size-btn" data-color="Black" onclick="selectOption(this)">Black</button>
-            <button class="size-btn" data-color="White" onclick="selectOption(this)">White</button>
-          </div>
-
-          <div class="product-tags">
-            <span class="tag">Disposable Hairnet</span>
-            <span class="tag">Comfortable Fit</span>
-            <span class="tag">Hygienic Protection</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 8 -->
-      <div class="product-card" data-name="PVC Food Wrap">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/pvcwrap.png" alt="PVC Food Wrap" class="main-product-img">
-          </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/pvcwrap.png')">
-              <img src="images/pvcwrap.png" alt="PVC Food Wrap 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/pvcwrap1.png')">
-              <img src="images/pvcwrap1.png" alt="PVC Food Wrap 2">
-            </div>
-          </div>
-        </div>
-
-        <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>PVC Food Wrap</h3>
-          <p>High-quality PVC food wrap designed for safe and effective food packaging and storage.</p>
-
-          <div class="product-size">
-            <span>Size:</span>
-            <button class="size-btn active" data-size='8"' onclick="selectOption(this)">8"</button>
-            <button class="size-btn" data-size='10"' onclick="selectOption(this)">10"</button>
-            <button class="size-btn" data-size='12"' onclick="selectOption(this)">12"</button>
-            <button class="size-btn" data-size='16"' onclick="selectOption(this)">16"</button>
-            <button class="size-btn" data-size='18"' onclick="selectOption(this)">18"</button>
-          </div>
-
-          <div class="product-tags">
-            <span class="tag">Freshness Protection</span>
-            <span class="tag">Food Safe Use</span>
-            <span class="tag">Packaging Essential</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 9 -->
-      <div class="product-card" data-name="Clear Tape">
-        <div class="product-gallery">
-          <div class="product-main-image">
-            <img src="images/tape.png" alt="Tape" class="main-product-img">
-          </div>
-          <div class="product-thumbs">
-            <div class="product-thumb active" onclick="changeProductImage(this, 'images/tape.png')">
-              <img src="images/tape.png" alt="Tape 1">
-            </div>
-            <div class="product-thumb" onclick="changeProductImage(this, 'images/tape1.png')">
-              <img src="images/tape1.png" alt="Tape 2">
-            </div>
-          </div>
-        </div>
-        <div class="product-content">
-          <button class="add-cart-btn" onclick="addToCart(this)">Add to Enquiry List</button>
-          <h3>Clear Tape</h3>
-          <p>High-quality tape designed for secure sealing, carton packing, and daily industrial or commercial packaging use.</p>
-
-          <div class="product-tags">
-            <span class="tag">Secure Sealing</span>
-            <span class="tag">Packaging Essential</span>
-            <span class="tag">Daily Commercial Use</span>
-          </div>
+          <h3>Sugarcane Straw</h3>
+          <p>Made from renewable plant-based material, sugarcane straws offer a more sustainable and premium choice for modern beverage and food service businesses.</p>
+          <ul class="product-specs">
+            <li>Material: Sugarcane Fiber</li>
+            <li>Custom printing available</li>
+          </ul>
+          <a href="https://wa.me/601161707216" class="product-btn" target="_blank">Request Sample</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Why Us -->
-  <section class="section" id="whyus">
-    <h2 class="section-title">Why Choose Proper Pack</h2>
-    <p class="section-subtitle">
-      We understand what businesses need: practical products, dependable supply, and responsive support.
-    </p>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🏭</div>
-        <h4>Consistent Supply</h4>
-        <p>Stable product availability for recurring business and bulk order requirements.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">📋</div>
-        <h4>Quotation Support</h4>
-        <p>Fast response for quotations, specifications, and sample requests for business customers.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">🚚</div>
-        <h4>Business Ready</h4>
-        <p>Suitable for F&B, retail, commercial and industrial operational usage.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">🤝</div>
-        <h4>Long-Term Partner</h4>
-        <p>We aim to build lasting customer relationships through service and reliability.</p>
-      </div>
+  <section class="section" id="why-us">
+    <h2 class="section-title">Why Choose Us</h2>
+    <p class="section-subtitle">A trusted supply partner for businesses that value consistency, quality, and fast communication.</p>
+    <div class="why-us">
+      <div class="why-box"><h3>Reliable Supply</h3><p>Consistent product availability and dependable support for your ongoing business requirements.</p></div>
+      <div class="why-box"><h3>Eco-Friendly Focus</h3><p>Offering greener alternatives to help businesses align with more sustainable packaging choices.</p></div>
+      <div class="why-box"><h3>Business Ready</h3><p>Suitable for cafes, F&B chains, restaurants, retailers, and wholesale distribution channels.</p></div>
+      <div class="why-box"><h3>Fast Response</h3><p>Quick quotation support and easy communication via email and WhatsApp for smooth enquiries.</p></div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta">
-    <h2>Need Product Pricing, Specs or Samples?</h2>
-    <p>
-      Contact Proper Pack (M) Sdn Bhd today for quotation requests, product details, and sample arrangements for your business.
-    </p>
-    <a href="#contact" class="btn">Request a Quotation</a>
-  </div>
-
-  <!-- Address & Map Section -->
-  <section class="address-section" id="location">
-    <div class="container">
-      <div class="address-heading">
-        <h2>Our Location</h2>
-        <p>Visit us or contact us for packaging & hygiene supply enquiries.</p>
-      </div>
-
-      <div class="address-grid">
-        <div class="address-card">
-          <h3>Proper Pack (M) Sdn Bhd</h3>
-          <p><strong>Address:</strong><br>
-          No 21 & 23, Jalan Pelepas 4/4,<br>
-          Tanjung Pelepas,<br>
-          81550 Gelang Patah,<br>
-          Johor Bahru, Johor</p>
-
-          <p><strong>Phone:</strong><br>
-          +60 18-389 4753</p>
-
-          <p><strong>Email:</strong><br>
-          pppmalaysia98@gmail.com</p>
-
-          <p><strong>Business Hours:</strong><br>
-          Mon - Sat: 9:00 AM - 6:00 PM</p>
-
-          <a 
-            href="https://maps.google.com/?q=No%2021%20and%2023%2C%20Jalan%20Pelepas%204%2F4%2C%20Tanjung%20Pelepas%2C%2081550%20Gelang%20Patah%2C%20Johor%20Bahru%2C%20Johor" 
-            target="_blank" 
-            class="map-btn">
-            Open in Google Maps
-          </a>
-        </div>
-
-        <div class="map-card">
-          <iframe 
-            src="https://www.google.com/maps?q=No%2021%20and%2023%2C%20Jalan%20Pelepas%204%2F4%2C%20Tanjung%20Pelepas%2C%2081550%20Gelang%20Patah%2C%20Johor%20Bahru%2C%20Johor&output=embed" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section" id="contact">
+  <section class="section contact-section" id="contact">
     <h2 class="section-title">Contact Us</h2>
     <p class="section-subtitle">
       Send us your enquiry and we’ll get back to you for quotation, product details, or sample arrangement.
     </p>
 
     <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Get In Touch</h3>
-        <div class="contact-info">
-          <div class="info-item">
-            <strong>Company</strong>
-            <span>Proper Pack (M) Sdn Bhd</span>
-          </div>
-          <div class="info-item">
-            <strong>WhatsApp</strong>
-            <span>+60 18-389 4753</span>
-          </div>
-          <div class="info-item">
-            <strong>Email</strong>
-            <span>pppmalaysia98@gmail.com</span>
-          </div>
-          <div class="info-item">
-            <strong>Business Type</strong>
-            <span>Packaging & Hygiene Products Supplier</span>
-          </div>
+      <div class="contact-info-card">
+        <h3>Factory Location</h3>
+        <h4>Biosip Straw (M) Sdn Bhd</h4>
+
+        <p class="shop-address">
+          Lot 2872, Jalan PK 18,<br>
+          Taman Perindustrian Krubong, 75250 Melaka
+        </p>
+
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps?q=Lot%202872,%20Jalan%20PK%2018,%20Taman%20Perindustrian%20Krubong,%2075250%20Melaka&output=embed"
+            width="100%"
+            height="260"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="contact-detail">
+          <p>📞 <a href="tel:+601161707216">+60 11-6170 7216</a></p>
+          <p>✉️ <a href="mailto:biosipz99@gmail.com">biosipz99@gmail.com</a></p>
+          <p>🕒 Monday - Saturday: 9AM - 6PM</p>
         </div>
       </div>
 
-      <div class="contact-card">
-        <h3>Send Enquiry</h3>
-        <form onsubmit="sendToWhatsApp(event)">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <input type="text" id="company" placeholder="Company Name" />
-          <input type="tel" id="phone" placeholder="Phone Number" />
-          <textarea id="message" placeholder="Tell us what products you need (e.g. face masks, gloves, food wraps, tape, etc.)" required></textarea>
-          <button type="submit" class="btn btn-primary submit-btn">Send via WhatsApp</button>
+      <div class="contact-form-card">
+        <h3>Request for Quotation</h3>
+
+        <form id="whatsappForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" placeholder="Enter your company name">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Your Phone</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" rows="6" placeholder="Type your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="whatsapp-btn">📩 Send via WhatsApp</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div>© 2026 <strong>Proper Pack (M) Sdn Bhd</strong>. All Rights Reserved.</div>
-      <div>Packaging • Hygiene • F&B Supply</div>
-    </div>
-  </footer>
+  <footer>© 2026 Biosip Straw (M) Sdn Bhd. All Rights Reserved.</footer>
+  <a href="https://wa.me/601161707216" class="whatsapp-float" target="_blank">WhatsApp Us</a>
 
-  <!-- Floating Buttons -->
-  <div class="floating-actions">
-    <button class="float-btn top-btn" id="backToTopBtn" onclick="scrollToTop()" title="Back to Top">⬆️</button>
-    <a href="tel:+60183894753" class="float-btn call" title="Call Now">📞</a>
-    <a href="https://wa.me/60183894753" target="_blank" class="float-btn whatsapp" title="WhatsApp Us">💬</a>
+  <div class="mobile-contact-bar">
+    <a href="tel:+601161707216" class="mobile-contact-btn mobile-call">Call Now</a>
+    <a href="https://wa.me/601161707216" class="mobile-contact-btn mobile-whatsapp" target="_blank">WhatsApp Now</a>
   </div>
 
   <script>
-    let enquiryList = JSON.parse(localStorage.getItem("properPackEnquiryList")) || [];
-
-    function saveEnquiryList() {
-      localStorage.setItem("properPackEnquiryList", JSON.stringify(enquiryList));
-    }
-
-    function updateEnquiryCount() {
-      document.getElementById("enquiryCount").innerText = enquiryList.length;
-    }
-
-    function renderEnquiryList() {
-      const container = document.getElementById("enquiryListContainer");
-
-      if (enquiryList.length === 0) {
-        container.innerHTML = `
-          <div class="empty-enquiry">
-            No products added yet.<br>
-            Add products from the product section to build your enquiry.
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = enquiryList.map((item, index) => `
-        <div class="enquiry-item">
-          <span>${item}</span>
-          <button class="remove-item-btn" onclick="removeEnquiryItem(${index})">Remove</button>
-        </div>
-      `).join("");
-    }
-
-    function openEnquiryModal() {
-      renderEnquiryList();
-      document.getElementById("enquiryModal").classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeEnquiryModal() {
-      document.getElementById("enquiryModal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    function removeEnquiryItem(index) {
-      enquiryList.splice(index, 1);
-      saveEnquiryList();
-      updateEnquiryCount();
-      renderEnquiryList();
-    }
-
-    function clearEnquiryList() {
-      enquiryList = [];
-      saveEnquiryList();
-      updateEnquiryCount();
-      renderEnquiryList();
-      alert("Enquiry list cleared.");
-    }
-
-    function scrollToContact() {
-      closeEnquiryModal();
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function sendToWhatsApp(event) {
+    // WhatsApp Form Submit
+    document.getElementById('whatsappForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const company = document.getElementById("company").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const message = document.getElementById("message").value.trim();
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const phoneInput = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
 
-      const whatsappNumber = "60183894753";
+      const text = `Hello Biosip Straw (M) Sdn Bhd,%0A%0AName: ${name}%0ACompany: ${company}%0APhone: ${phoneInput}%0AEnquiry: ${message}`;
+      const phone = '601161707216';
 
-      const productText = enquiryList.length > 0
-        ? enquiryList.join(", ")
-        : "Not specified";
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    });
 
-      const text =
-        `Hello Proper Pack (M) Sdn Bhd,%0A%0A` +
-        `Name: ${name}%0A` +
-        `Company: ${company || "-"}%0A` +
-        `Phone: ${phone || "-"}%0A` +
-        `Products: ${productText}%0A` +
-        `Enquiry: ${message}`;
-
-      window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-    }
-
-    function changeProductImage(thumb, newSrc) {
-      const productCard = thumb.closest(".product-card");
-      const mainImage = productCard.querySelector(".main-product-img");
-      const allThumbs = productCard.querySelectorAll(".product-thumb");
-
-      mainImage.src = newSrc;
-
-      allThumbs.forEach(t => t.classList.remove("active"));
-      thumb.classList.add("active");
-    }
-
-    function selectOption(button) {
-      const productCard = button.closest(".product-card");
-      const optionGroup = button.parentElement;
-      const buttons = optionGroup.querySelectorAll(".size-btn");
-
-      buttons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-    }
-
-    function getSelectedOptions(productCard) {
-      const optionGroups = productCard.querySelectorAll(".product-size");
-      const selections = [];
-
-      optionGroups.forEach(group => {
-        const label = group.querySelector("span")?.innerText.replace(":", "").trim() || "Option";
-        const activeBtn = group.querySelector(".size-btn.active");
-
-        if (activeBtn) {
-          selections.push(`${label}: ${activeBtn.innerText.trim()}`);
-        }
-      });
-
-      return selections;
-    }
-
-    function addToCart(button) {
-      const productCard = button.closest(".product-card");
-      const productName = productCard.dataset.name || productCard.querySelector("h3").innerText.trim();
-      const selections = getSelectedOptions(productCard);
-
-      let fullName = productName;
-      if (selections.length > 0) {
-        fullName += ` (${selections.join(", ")})`;
-      }
-
-      enquiryList.push(fullName);
-      saveEnquiryList();
-      updateEnquiryCount();
-
-      button.innerText = "Added ✓";
-      button.style.background = "#16a34a";
-
-      setTimeout(() => {
-        button.innerText = "Add to Enquiry List";
-        button.style.background = "";
-      }, 1200);
-    }
-
+    // Hero Slider
     let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    let sliderInterval;
+    const heroSlides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
 
     function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
       });
 
       dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
+        dot.classList.toggle('active', i === index);
       });
 
       currentSlide = index;
@@ -1896,56 +922,44 @@
 
     function changeSlide(direction) {
       let newIndex = currentSlide + direction;
-
-      if (newIndex < 0) newIndex = slides.length - 1;
-      if (newIndex >= slides.length) newIndex = 0;
-
+      if (newIndex < 0) newIndex = heroSlides.length - 1;
+      if (newIndex >= heroSlides.length) newIndex = 0;
       showSlide(newIndex);
     }
 
     function goToSlide(index) {
       showSlide(index);
-      restartSlider();
     }
 
-    function startSlider() {
-      sliderInterval = setInterval(() => {
-        changeSlide(1);
-      }, 3500);
-    }
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
 
-    function restartSlider() {
-      clearInterval(sliderInterval);
-      startSlider();
-    }
+    // Product Sliders
+    document.querySelectorAll('.product-slider').forEach(slider => {
+      const slideTrack = slider.querySelector('.product-slides');
+      const images = slideTrack.querySelectorAll('img');
+      const prevBtn = slider.querySelector('.product-arrow.prev');
+      const nextBtn = slider.querySelector('.product-arrow.next');
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+      let index = 0;
+      const total = images.length;
 
-    window.addEventListener("scroll", () => {
-      const topBtn = document.getElementById("backToTopBtn");
-      if (window.scrollY > 400) {
-        topBtn.classList.add("show");
-      } else {
-        topBtn.classList.remove("show");
+      function updateSlide() {
+        slideTrack.style.transform = `translateX(-${index * 100}%)`;
       }
-    });
 
-    document.getElementById("enquiryModal").addEventListener("click", function (e) {
-      if (e.target === this) {
-        closeEnquiryModal();
-      }
-    });
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + total) % total;
+        updateSlide();
+      });
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        closeEnquiryModal();
-      }
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % total;
+        updateSlide();
+      });
     });
-
-    updateEnquiryCount();
-    startSlider();
   </script>
+
 </body>
 </html>
